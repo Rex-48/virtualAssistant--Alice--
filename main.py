@@ -4,6 +4,11 @@ import random
 import os
 from wiki_reader import *
 from webScrapper import *
+from Search import *
+from youtube_downloader import *
+from scheduler import *
+
+
 
 # text to speech engine function with zira voice
 engine = pyttsx3.init()
@@ -195,50 +200,99 @@ while True:
 
 
     elif "search" in user :
-        pass
+        x = int(inp.index("for")+3)
+        y = len(inp)
+        que = inp[x:y]
+        webSearch(que)
+
+
 
     elif "anime" in user :
-        pass
+        speak("do u need the directory :")
+        response = voice_recognizer()
+        if "yes" or "yeah" in response :
+            os.startfile("E:\Anime")
+        elif "no" in response :
+            speak("would u like to me play some movie or a show ")
+            res = voice_recognizer()
+
+            if "no" or "nope" or "nah" in res :
+                speak("i dont have any other media file beside this")
+                speak("i recommend for a server request pull data from the true nas at your home")
+                continue
+            else :
+                speak("playing a random movie from the collection")
+                os.startfile("E:\doc\DeadPool 01.mp4")
+
+
+
 
     elif "set reminder" in user :
         pass
 
     elif "download" and "youtube" and "video" in user :
-        pass
+        speak("okay sir activating the youtube video downlaoder ")
+        speak("the video will be downloaded to the current directory")
+        speak("now please enter the link for the video down below")
+        link = str(input("link here : "))
+        downloader(link)
 
-    elif "shedule" in user :
-        pass
+    elif "shedule"or "scheduler" or "activate scheduler" in user :
+        speak("please follow the process now on the screen")
+        task_scheduler()
 
     elif "spotify play" in user :
         pass
 
     elif "kill" in user:
         if "git-bash" in user :
-        os.system("taskkill /f /im mintty.exe")
+            os.system("taskkill /f /im mintty.exe")
 
         elif "Google Chrome" in user :
                 os.system("taskkill /f /im chrome.exe")
 
-        elif "edge_browser" in user 
+        elif "edge_browser" in user :
                 os.system("taskkill /f /im msedge.exe")
 
-        elif "vlc" in user
+        elif "vlc" in user :
                 os.system("taskkill /f /im vlc.exe")
 
-        elif "Visual Studio Code" in user
+        elif "Visual Studio Code" in user :
                 os.system("taskkill /f /im Code.exe")
 
-        elif "Command_Prompt" in user
+        elif "Command_Prompt" in user :
                 os.system("taskkill /f /im cmd.exe")
 
-        elif "Spotify" in user
+        elif "Spotify" in user :
                 os.system("taskkill /f /im Spotify.exe")
 
-        elif "self close" in user
+        elif "self close" in user :
                 exit()
 
     elif "terminate" in user :
-        pass
+        if "git-bash" in user :
+            os.system("taskkill /f /im mintty.exe")
+
+        elif "Google Chrome" in user :
+                os.system("taskkill /f /im chrome.exe")
+
+        elif "edge_browser" in user :
+                os.system("taskkill /f /im msedge.exe")
+
+        elif "vlc" in user :
+                os.system("taskkill /f /im vlc.exe")
+
+        elif "Visual Studio Code" in user :
+                os.system("taskkill /f /im Code.exe")
+
+        elif "Command_Prompt" in user :
+                os.system("taskkill /f /im cmd.exe")
+
+        elif "Spotify" in user :
+                os.system("taskkill /f /im Spotify.exe")
+
+        elif "self close" in user :
+                exit()
 
     elif "what is" in user :
         inp = str(user)
