@@ -20,5 +20,4 @@ def voice_recognizer():
             continue
     return text[14:-3]
 
-
 voice_recognizer()
