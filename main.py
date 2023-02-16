@@ -7,6 +7,9 @@ from webScrapper import *
 from Search import *
 from youtube_downloader import *
 from scheduler import *
+from automation import *
+from set_reminders import *
+
 
 
 
@@ -66,7 +69,7 @@ spotify = "D:/projects/virtualAssistant/References/Spotify.lnk"
 vs_code = "D:/projects/virtualAssistant/References/Visual Studio Code.lnk"
 vlc = "D:/projectsvirtualAssistante/References/VLC media player.lnk"
 powerShell = "D:/projects/virtualAssistant/References/Windows PowerShell.lnk"
-
+locate = "D:/projects/virtualAssistant/remider.txt"
 
 
 
@@ -187,7 +190,23 @@ while True:
 
 
     elif "switch" in user :
-        pass
+        led1 = 2
+        led2 = 3
+        system1 = 4
+        system2 = 5
+
+        if "led1" in user :
+            switch1(led1)
+
+        elif "led2" in user :
+            switch1(led2)
+
+        elif "system 1" in user :
+            switch1(system1)
+
+        elif "system 2" in user :
+            switch1(system2)        
+
 
     elif "wikipedia" in user :
 
@@ -227,8 +246,20 @@ while True:
 
 
 
-    elif "set reminder" in user :
-        pass
+    elif "reminder" in user :
+        speak("Affirmative ..")
+        speak("would u like to add or view reminders")
+        ext = voice_recognizer()
+        if "add" in ext :
+            speak("what should i put on the reminder list")
+            remind = voice_recognizer()
+            
+            reminder_write(locate,remind)
+        else :
+            speak("affirmative")
+            speak("here is the reminder list : ")
+            reminder_read(locate)
+        
 
     elif "download" and "youtube" and "video" in user :
         speak("okay sir activating the youtube video downlaoder ")
@@ -241,8 +272,8 @@ while True:
         speak("please follow the process now on the screen")
         task_scheduler()
 
-    elif "spotify play" in user :
-        pass
+    # elif "spotify play" in user :
+    #     pass
 
     elif "kill" in user:
         if "git-bash" in user :

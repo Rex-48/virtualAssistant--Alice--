@@ -6,5 +6,6 @@ def reminder_write(path , data):
     file = open(path , "w")
     file.write(date.today()+" -- "+data)
 
-def remider_read(path):
-    os.startfile("D:/projects/virtualAssistant/remider.txt")
+def reminder_read(path):
+    os.startfile(path)
+
