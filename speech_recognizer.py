@@ -21,10 +21,32 @@
 ## THIS HERE ABOVE IS THE CODE FOR VOSK MODEL SPEECH RECOGNITION
 
 
+# def voice_recognizer():
+#     new = str(input())
+#     return new
 
-
-
+import speech_recognition as sr
 
 def voice_recognizer():
-    new = str(input())
-    return new
+    #It takes microphone input from the user and returns string output
+
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source, duration=0.2)
+        print("Listening...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+
+    try:
+        print("Recognizing...")    
+        print("by product")
+        query = r.recognize_google(audio, language='en-in')
+
+        print("user said : "+query)
+
+    except Exception as e:    
+        print("Say that again please...")  
+        return "None"
+    return query
+
+

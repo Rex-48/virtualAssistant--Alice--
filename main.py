@@ -142,8 +142,7 @@ while True:
 
         elif "power shell" in user or "shell" in user :
             os.startfile(powerShell)
-        else:
-            not_recognized()
+
 
 
 
@@ -187,8 +186,6 @@ while True:
         elif "power shell" in user or "shell" in user :
             os.startfile(powerShell)
 
-        else :
-            not_recognized()
 
 
 
@@ -257,8 +254,7 @@ while True:
             else :
                 speak("playing a random movie from the collection")
                 os.startfile("E:\doc\DeadPool 01.mp4")
-        else:
-            not_recognized()
+
 
 
 
