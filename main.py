@@ -71,9 +71,19 @@ vlc = "D:/projectsvirtualAssistante/References/VLC media player.lnk"
 powerShell = "D:/projects/virtualAssistant/References/Windows PowerShell.lnk"
 locate = "D:/projects/virtualAssistant/remider.txt"
 
+speak("hello sir good day to u")
+speak("i am up , just let me check the error analysis")
+
+speak("core program online")
+speak("running error checks")
+speak("loading machine learning models and other dependencies")
+
+
 
 
 while True:
+
+
     user_command = voice_recognizer()
 
     user = user_command.lower()
