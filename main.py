@@ -22,9 +22,8 @@ engine.setProperty('rate', 180)
 
 def speak(text):
     print(text)
-    # engine.say(text)
-    # engine.runAndWait()
-
+    engine.say(text)
+    engine.runAndWait()
 
 
 # this function is executed when the command is not recognized
@@ -74,14 +73,14 @@ locate = "D:/projects/virtualAssistant/remider.txt"
 
 
 
+speak("core program online")
+speak("running error checks")
+speak("loading machine learning models and other dependencies")
 
 
-# speak("hello sir good day to u")
-# speak("i am up , just let me check the error analysis")
 
-# speak("core program online")
-# speak("running error checks")
-# speak("loading machine learning models and other dependencies")
+speak("hello sir good day to u")
+speak("i am up , just let me check the error analysis")
 
 
 
@@ -97,7 +96,6 @@ print("                    ")
 
 while True:
 
-
     user_command = str(voice_recognizer())
 
     user = user_command.lower()
@@ -105,33 +103,43 @@ while True:
     if "open" in user :
 
         if "command prompt" in user :
+            speak("Affirmative")
             os.startfile(command_prompt)
         
         elif "control pannel" in user :
+            speak("Affirmative")
             os.startfile(command_prompt)
 
         elif "drive e" in user :
+            speak("Affirmative")
             os.startfile(e_drive)
 
         elif "downloads" in user :
+            speak("Affirmative")
             os.startfile(downloads)
 
         elif "file explorer" in user :
+            speak("Affirmative")
             os.startfile(file_explorer)
 
         elif "git bash" in user :
+            speak("Affirmative")
             os.startfile(git_bash)
 
         elif "microsoft edge" in user :
+            speak("Affirmative")
             os.startfile(edge_browser)
 
         elif "google chrome" in user or "chrome" in user or "google" in user :
+            speak("Affirmative")
             os.startfile(chrome_Browser)
 
         elif "run" in user or "win run" in user :
+            speak("Affirmative")
             os.startfile(run_command)
 
         elif "spotify" in user :
+            speak("Affirmative")
             os.startfile(spotify)
 
         elif "vs code" in user or "visual studio code" in user:
@@ -148,42 +156,55 @@ while True:
 
     elif "launch" in user :
         if "command prompt" in user :
+            speak("Affirmative")
             os.startfile(command_prompt)
         
         elif "control pannel" in user :
+            speak("Affirmative")
             os.startfile(command_prompt)
 
         elif "drive e" in user :
+            speak("Affirmative")
             os.startfile(e_drive)
 
         elif "downloads" in user :
+            speak("Affirmative")
             os.startfile(downloads)
 
         elif "file explorer" in user :
+            speak("Affirmative")
             os.startfile(file_explorer)
 
         elif "git bash" in user :
+            speak("Affirmative")
             os.startfile(git_bash)
 
         elif "microsoft edge" in user :
+            speak("Affirmative")
             os.startfile(edge_browser)
 
         elif "google chrome" in user or "chrome" in user :
+            speak("Affirmative")
             os.startfile(chrome_Browser)
 
         elif "run" in user or "win run" in user :
+            speak("Affirmative")
             os.startfile(run_command)
 
         elif "spotify" in user :
+            speak("Affirmative")
             os.startfile(spotify)
 
         elif "vs code" in user or "visual studio code" in user:
+            speak("Affirmative")
             os.startfile(vs_code)
 
         elif "vlc" in user or "media player" in user :
+            speak("Affirmative")
             os.startfile(vlc)
 
         elif "power shell" in user or "shell" in user :
+            speak("Affirmative")
             os.startfile(powerShell)
 
 
@@ -199,28 +220,36 @@ while True:
 
         if "on" in user :
             if "led 1" in user :
+                speak("setting pinout voltage to high")
                 switch_onn(led1)    
 
             elif "led 2" in user :
+                speak("setting pinout voltage to high")
                 switch_onn(led2)
 
             elif "system 1" in user :
+                speak("setting pinout voltage to high")
                 switch_onn(system1)
 
             elif "system 2" in user :
+                speak("setting pinout voltage to high")
                 switch_onn(system1)
 
         else:
             if "led 1" in user :
+                speak("setting pinout voltage to low")
                 switch_off(led1)    
 
             elif "led 2" in user :
+                speak("setting pinout voltage to low")
                 switch_off(led2)
 
             elif "system 1" in user :
+                speak("setting pinout voltage to high")
                 switch_off(system1)
 
             elif "system 2" in user :
+                speak("setting pinout voltage to high")
                 switch_off(system1)
 
 
@@ -233,8 +262,6 @@ while True:
         y = len(inp)
         query = inp[x:y]
         wiki(query)
-
-
 
 
 
@@ -289,55 +316,74 @@ while True:
     # elif "spotify play" in user :
     #     pass
 
+
     elif "kill" in user:
         if "git-bash" in user :
+            speak("terminating")
             os.system("taskkill /f /im mintty.exe")
 
         elif "google chrome" in user :
-                os.system("taskkill /f /im chrome.exe")
+            speak("terminating")
+            os.system("taskkill /f /im chrome.exe")
 
         elif "edge_browser" in user :
-                os.system("taskkill /f /im msedge.exe")
+            speak("terminating")
+            os.system("taskkill /f /im msedge.exe")
 
         elif "vlc" in user :
-                os.system("taskkill /f /im vlc.exe")
+            speak("terminating")
+            os.system("taskkill /f /im vlc.exe")
 
         elif "visual studio code" in user :
-                os.system("taskkill /f /im Code.exe")
+            speak("terminating")
+            os.system("taskkill /f /im Code.exe")
 
         elif "command_prompt" in user :
-                os.system("taskkill /f /im cmd.exe")
+            speak("terminating")
+            os.system("taskkill /f /im cmd.exe")
 
         elif "spotify" in user :
-                os.system("taskkill /f /im Spotify.exe")
+            speak("terminating")
+            os.system("taskkill /f /im Spotify.exe")
 
-        elif "self" in user :
-                exit()
+        elif "alice" in user :
+            speak("terminating")
+            exit()
 
     elif "terminate" in user :
         if "git-bash" in user :
+            speak("terminating")
             os.system("taskkill /f /im mintty.exe")
 
         elif "google chrome" in user :
-                os.system("taskkill /f /im chrome.exe")
+            speak("terminating")
+            os.system("taskkill /f /im chrome.exe")
 
         elif "edge_browser" in user :
-                os.system("taskkill /f /im msedge.exe")
+            speak("terminating")
+            os.system("taskkill /f /im msedge.exe")
 
         elif "vlc" in user :
-                os.system("taskkill /f /im vlc.exe")
+            speak("terminating")
+            os.system("taskkill /f /im vlc.exe")
 
         elif "visual studio code" in user :
-                os.system("taskkill /f /im Code.exe")
+            speak("terminating")
+            os.system("taskkill /f /im Code.exe")
 
         elif "command_prompt" in user :
-                os.system("taskkill /f /im cmd.exe")
+            speak("terminating")
+            os.system("taskkill /f /im cmd.exe")
 
         elif "spotify" in user :
-                os.system("taskkill /f /im Spotify.exe")
+            speak("terminating")
+            os.system("taskkill /f /im Spotify.exe")
 
         elif "self close" in user :
-                exit()
+            speak("terminating")
+            speak("closing libraries and read and write files")
+
+            exit()
 
     elif "what is" in user :
         inp = str(user)
@@ -353,8 +399,3 @@ while True:
 
     else :
         not_recognized()
-
-
-
-
-

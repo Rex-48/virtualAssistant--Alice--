@@ -2,7 +2,7 @@
 # import pyaudio
 
 
-# model = Model(r"D:/projects/virtualAssistant/vosk-model-en-us-0.22")
+# model = Model(r"D:/projects/virtualAssistant/vosk-model-small-lang-en")
 # recognizer = KaldiRecognizer(model , 16000)
 # mic = pyaudio.PyAudio()
 # stream = mic.open(format=pyaudio.paInt16 , channels = 1 , rate = 16000 , input = True , frames_per_buffer = 8192)
@@ -18,35 +18,35 @@
 #         else:
 #             voice_recognizer()
 
-## THIS HERE ABOVE IS THE CODE FOR VOSK MODEL SPEECH RECOGNITION
+# ## THIS HERE ABOVE IS THE CODE FOR VOSK MODEL SPEECH RECOGNITION
 
-
-# def voice_recognizer():
-#     new = str(input())
-#     return new
-
-import speech_recognition as sr
 
 def voice_recognizer():
-    #It takes microphone input from the user and returns string output
+    new = str(input("user : "))
+    return new
 
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        r.adjust_for_ambient_noise(source, duration=0.2)
-        print("Listening...")
-        r.pause_threshold = 1
-        audio = r.listen(source)
+# import speech_recognition as sr
 
-    try:
-        print("Recognizing...")    
-        print("by product")
-        query = r.recognize_google(audio, language='en-in')
+# def voice_recognizer():
+#     #It takes microphone input from the user and returns string output
 
-        print("user said : "+query)
+#     r = sr.Recognizer()
+#     with sr.Microphone() as source:
+#         r.adjust_for_ambient_noise(source, duration=0.2)
+#         print("Listening...")
+#         r.pause_threshold = 1
+#         audio = r.listen(source)
 
-    except Exception as e:    
-        print("Say that again please...")  
-        return "None"
-    return query
+#     try:
+#         print("Recognizing...")    
+#         print("by product")
+#         query = r.recognize_google(audio, language='en-us')
+
+#         print("user said : "+query)
+
+#     except Exception as e:    
+#         print("Say that again please...")  
+#         return "None"
+#     return query
 
 
