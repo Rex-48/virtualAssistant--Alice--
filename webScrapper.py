@@ -24,4 +24,3 @@ def scrape_links():
             print(linkText)
 
 
-scrape_links()

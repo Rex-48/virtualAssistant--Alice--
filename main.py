@@ -1,10 +1,10 @@
 import pyttsx3
-from speech_recognizer import *
+
 import random 
 import os
 from wiki_reader import *
 from webScrapper import *
-from Search import *
+# from Search import *
 from youtube_downloader import *
 from scheduler import *
 from automation import *
@@ -18,11 +18,12 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 
 engine.setProperty('voice', voices[1].id)
-engine.setProperty('rate', 170)
+engine.setProperty('rate', 180)
 
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    print(text)
+    # engine.say(text)
+    # engine.runAndWait()
 
 
 
@@ -71,20 +72,33 @@ vlc = "D:/projectsvirtualAssistante/References/VLC media player.lnk"
 powerShell = "D:/projects/virtualAssistant/References/Windows PowerShell.lnk"
 locate = "D:/projects/virtualAssistant/remider.txt"
 
-speak("hello sir good day to u")
-speak("i am up , just let me check the error analysis")
 
-speak("core program online")
-speak("running error checks")
-speak("loading machine learning models and other dependencies")
 
+
+
+# speak("hello sir good day to u")
+# speak("i am up , just let me check the error analysis")
+
+# speak("core program online")
+# speak("running error checks")
+# speak("loading machine learning models and other dependencies")
+
+
+
+
+
+
+from speech_recognizer import *
+
+
+print("                    ")
 
 
 
 while True:
 
 
-    user_command = voice_recognizer()
+    user_command = str(voice_recognizer())
 
     user = user_command.lower()
 
@@ -111,7 +125,7 @@ while True:
         elif "microsoft edge" in user :
             os.startfile(edge_browser)
 
-        elif "google chrome" in user or "chrome" in user :
+        elif "google chrome" in user or "chrome" in user or "google" in user :
             os.startfile(chrome_Browser)
 
         elif "run" in user or "win run" in user :
@@ -128,27 +142,8 @@ while True:
 
         elif "power shell" in user or "shell" in user :
             os.startfile(powerShell)
-
-
-
-
-
-
-
-    elif "automation" in user :
-        pass
-
-
-
-
-
-    elif "fire" in user :
-        pass
-
-
-
-
-
+        else:
+            not_recognized()
 
 
 
@@ -205,34 +200,44 @@ while True:
         system1 = 4
         system2 = 5
 
-        if "led1" in user :
-            switch1(led1)
+        if "on" in user :
+            if "led 1" in user :
+                switch_onn(led1)    
 
-        elif "led2" in user :
-            switch1(led2)
+            elif "led 2" in user :
+                switch_onn(led2)
 
-        elif "system 1" in user :
-            switch1(system1)
+            elif "system 1" in user :
+                switch_onn(system1)
 
-        elif "system 2" in user :
-            switch1(system2)        
+            elif "system 2" in user :
+                switch_onn(system1)
+
+        else:
+            if "led 1" in user :
+                switch_off(led1)    
+
+            elif "led 2" in user :
+                switch_off(led2)
+
+            elif "system 1" in user :
+                switch_off(system1)
+
+            elif "system 2" in user :
+                switch_off(system1)
+
 
 
     elif "wikipedia" in user :
 
         inp = str(user)
 
-        x = int(inp.index("for")+3)
+        x = int(inp.index("for"))+3
         y = len(inp)
         query = inp[x:y]
         wiki(query)
 
 
-    elif "search" in user :
-        x = int(inp.index("for")+3)
-        y = len(inp)
-        que = inp[x:y]
-        webSearch(que)
 
 
 
@@ -252,6 +257,8 @@ while True:
             else :
                 speak("playing a random movie from the collection")
                 os.startfile("E:\doc\DeadPool 01.mp4")
+        else:
+            not_recognized()
 
 
 
@@ -269,6 +276,7 @@ while True:
             speak("affirmative")
             speak("here is the reminder list : ")
             reminder_read(locate)
+
         
 
     elif "download" and "youtube" and "video" in user :
@@ -278,7 +286,7 @@ while True:
         link = str(input("link here : "))
         downloader(link)
 
-    elif "shedule"or "scheduler" or "activate scheduler" in user :
+    elif "shedule" in user or "scheduler" in user or "activate scheduler" in user :
         speak("please follow the process now on the screen")
         task_scheduler()
 
@@ -289,7 +297,7 @@ while True:
         if "git-bash" in user :
             os.system("taskkill /f /im mintty.exe")
 
-        elif "Google Chrome" in user :
+        elif "google chrome" in user :
                 os.system("taskkill /f /im chrome.exe")
 
         elif "edge_browser" in user :
@@ -298,23 +306,23 @@ while True:
         elif "vlc" in user :
                 os.system("taskkill /f /im vlc.exe")
 
-        elif "Visual Studio Code" in user :
+        elif "visual studio code" in user :
                 os.system("taskkill /f /im Code.exe")
 
-        elif "Command_Prompt" in user :
+        elif "command_prompt" in user :
                 os.system("taskkill /f /im cmd.exe")
 
-        elif "Spotify" in user :
+        elif "spotify" in user :
                 os.system("taskkill /f /im Spotify.exe")
 
-        elif "self close" in user :
+        elif "self" in user :
                 exit()
 
     elif "terminate" in user :
         if "git-bash" in user :
             os.system("taskkill /f /im mintty.exe")
 
-        elif "Google Chrome" in user :
+        elif "google chrome" in user :
                 os.system("taskkill /f /im chrome.exe")
 
         elif "edge_browser" in user :
@@ -323,13 +331,13 @@ while True:
         elif "vlc" in user :
                 os.system("taskkill /f /im vlc.exe")
 
-        elif "Visual Studio Code" in user :
+        elif "visual studio code" in user :
                 os.system("taskkill /f /im Code.exe")
 
-        elif "Command_Prompt" in user :
+        elif "command_prompt" in user :
                 os.system("taskkill /f /im cmd.exe")
 
-        elif "Spotify" in user :
+        elif "spotify" in user :
                 os.system("taskkill /f /im Spotify.exe")
 
         elif "self close" in user :
@@ -338,12 +346,12 @@ while True:
     elif "what is" in user :
         inp = str(user)
 
-        x = int(inp.index("for")+3)
+        x = int(inp.index("for"))+3
         y = len(inp)
         query = inp[x:y]
         wiki(query)
 
-    elif "scrape" or "scrapper" or "webbscrapper" or "scraping" or "web scrapping"  or "grab links" in user :
+    elif "scrape" in user or "scrapper" in user or "webbscrapper" in user or "scraping" in user or "web scrapping" in user or "grab links" in user :
         speak("activating web Scrapper")
         scrape_links()
 

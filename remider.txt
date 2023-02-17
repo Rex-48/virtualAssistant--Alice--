@@ -1,1 +1,1 @@
-##   this is the file that holds all the remiders   ##
+2023-02-17 -- make sure to cover debugging by 9 am

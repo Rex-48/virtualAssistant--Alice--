@@ -8,3 +8,5 @@ def webSearch(query):
     	matched_elements = browser.get("https://www.google.com/search?q=" +
     									search_string + "&start=" + str(i))
 
+
+webSearch("youtube")

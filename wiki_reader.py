@@ -1,12 +1,12 @@
 
-import wiki_reader
+import wikipedia
 
 from tkinter import *
 
 
 def wiki(text):
 
-    t = wiki_reader.summary(text)
+    t = wikipedia.summary(text)
 
     Fact = t
     root = Tk()
