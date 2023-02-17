@@ -337,6 +337,8 @@ while True:
         speak("activating web Scrapper")
         scrape_links()
 
+    else :
+        not_recognized()
 
 
 
