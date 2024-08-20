@@ -3,7 +3,7 @@ Virtual Assistant Project
 Welcome to our Virtual Assistant Project! This project aims to create a versatile and user-friendly virtual assistant that can assist users with various tasks, answer questions, and provide helpful information.
 
 Features
-Natural Language Processing (NLP): Our virtual assistant utilizes advanced NLP techniques to understand and respond to user input in a conversational manner.
+Prompts: Our virtual assistant utilizes a long list of pre recorded tasks to pick the closest command that u provided to initiate responses in a conversational manner.
 Task Automation: It can automate repetitive tasks such as sending emails, setting reminders, fetching information from the web, etc.
 Customizable Responses: Users can customize responses and add new functionalities according to their needs.
 Cross-Platform Compatibility: The virtual assistant can be deployed on various platforms including desktop, web, and mobile.
